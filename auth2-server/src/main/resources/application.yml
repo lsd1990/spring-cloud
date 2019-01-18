@@ -1,0 +1,37 @@
+server:
+  port: 8043
+  servlet:
+    context-path: /oauth2Server
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+spring:
+  application:
+    name: oauth-server
+
+
+jdbc:
+  driverClassName: com.mysql.jdbc.Driver
+  url: jdbc:mysql://csb.nhsoft.cn:3306/oauth_server?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+  user: root
+  pass: REZFIUK2mmxKVptwEUQa
+
+##############################
+hibernate:
+  dialect: com.mysql.jdbc.Driver
+  show_sql: false
+  format_sql: true
+  use_sql_comments: true
+  generate_statistics: false
+  cache.use_second_level_cache: true
+  cache.use_query_cache: false
+  max_fetch_depth: 3
+  default_batch_fetch_size: 16
+  jdbc.batch_size: 70
+  jdbc.fetch_size: 50
+
+entitymanager:
+  packagesToScan: com.lsd.hope.*.model
+
