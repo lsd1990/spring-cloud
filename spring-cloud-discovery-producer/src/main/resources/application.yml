@@ -1,0 +1,15 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: spring-cloud-eureka-client
+eureka:
+  instance:
+    preferIpAddress: true
+    #这样写eureka服务注册中心会显示本机ip+端口号
+    instanceId: ${spring.cloud.client.ipAddress}:${server.port}
+    #这样写eureka服务注册中心会显示项目名和端口号
+    #instanceId: ${spring.application.name}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.4.62:7000/eurekaServer/eureka
