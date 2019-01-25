@@ -27,7 +27,8 @@
 		<module>spring-cloud-discovery-producer</module>
 		<module>spring-cloud-discovery-consumer</module>
 		<module>spring-cloud-discovery-producer2</module>
-	</modules>
+        <module>rxjava</module>
+    </modules>
 
 
 	<properties>
