@@ -1,10 +1,11 @@
 package com.lsd.rx.java;
 
 import io.reactivex.Flowable;
-import io.reactivex.Observable;
+import io.reactivex.Scheduler;
 import io.reactivex.functions.Consumer;
 
 public class RxJavaFlowableDemo {
+
 
     public static void main(String args[]){
 
@@ -15,7 +16,21 @@ public class RxJavaFlowableDemo {
             }
         });
 
-        Observable<String> o = Observable.just("one object","one object");
+
+
+
+        Flowable.fromArray(1, 2, 3).observeOn(new Scheduler() {
+            @Override
+            public Worker createWorker() {
+
+                return null;// TODO (lusudong, 2019/1/26)
+            }
+        }).subscribeOn(new Scheduler() {
+            @Override
+            public Worker createWorker() {
+                return null;// TODO (lusudong, 2019/1/26)
+            }
+        });
 
     }
 }
